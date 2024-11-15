@@ -4,13 +4,13 @@ plugins {
 }
 
 android {
-    compileSdk 32
+    compileSdk 34
 
     defaultConfig {
         applicationId "com.example.myapplication"
-        minSdk 29
-        targetSdk 32
-        versionCode 1
+        minSdk 28
+        targetSdk 33
+        versionCode 18
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -46,6 +46,12 @@ android {
 }
 
 dependencies {
+    implementation 'com.github.wendykierp:JTransforms:3.1'
+    implementation 'com.github.lincollincol:compose-audiowaveform:v1.1.1'
+    implementation 'com.github.gkonovalov.android-vad:webrtc:2.0.6'
+    implementation (fileTree(dir: 'libs', include: ['*.aar']))
+    implementation   'androidx.core:core-ktx:1.6.0'
+    implementation 'com.airbnb.android:lottie-compose:5.0.3'
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
     implementation 'com.google.code.gson:gson:2.8.8'
     implementation 'androidx.core:core-ktx:1.7.0'
@@ -54,13 +60,20 @@ dependencies {
     implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
     implementation 'androidx.activity:activity-compose:1.3.1'
-    implementation files('src/main/java/com/example/myapplication/lib/async-1.0.4.jar')
-    implementation files('src/main/java/com/example/myapplication/lib/dev-config-sdk.jar')
-    implementation files('src/main/java/com/example/myapplication/lib/settingipcsdk_1.0.1.jar')
+    implementation files('libs\\classes.jar')
+    implementation files('libs\\umap.jar')
+    implementation files('libs\\settingipcsdk_1.0.1.jar')
+    implementation files('libs\\async-1.0.4.jar')
+
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+    implementation "androidx.compose.runtime:runtime-livedata:$compose_version"
+
+    implementation project(':robotcontrolSdk')
+
+
 }
