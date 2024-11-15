@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+/.idea/deploymentTargetSelector.xml
+/app/src/main/ic_launcher-playstore.png
+/app/src/main/res/drawable/ic_launcher_foreground.xml
+/.idea/kotlinc.xml
+/.idea/migrations.xml
+/.idea/render.experimental.xml
